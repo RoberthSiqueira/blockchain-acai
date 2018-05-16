@@ -117,7 +117,7 @@ participant Importer extends Business {
 /**
  * JUST FOR INITIALIZING A DEMO
  */
-transaction SetupDemo {
+transaction GeraLaudo {
 }
 
 event TemperatureThresholdEvent {

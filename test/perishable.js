@@ -55,8 +55,8 @@ describe('Perishable Shipping Network', () => {
             // submit the setup demo transaction
             // this will create some sample assets and participants
             factory = businessNetworkConnection.getBusinessNetwork().getFactory();
-            const setupDemo = factory.newTransaction(NS, 'SetupDemo');
-            return businessNetworkConnection.submitTransaction(setupDemo);
+            const geraLaudo = factory.newTransaction(NS, 'GeraLaudo');
+            return businessNetworkConnection.submitTransaction(geraLaudo);
         });
     });
 

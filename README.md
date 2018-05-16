@@ -13,15 +13,15 @@ This business network defines:
 `Contract` `Shipment`
 
 **Transactions**
-`TemperatureReading` `ShipmentReceived` `SetupDemo`
+`TemperatureReading` `ShipmentReceived` `GeraLaudo`
 
 To test this Business Network Definition in the **Test** tab:
 
-Submit a `SetupDemo` transaction:
+Submit a `GeraLaudo` transaction:
 
 ```
 {
-  "$class": "org.acme.shipping.perishable.SetupDemo"
+  "$class": "org.acme.shipping.perishable.GeraLaudo"
 }
 ```
 
