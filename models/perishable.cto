@@ -46,6 +46,10 @@ transaction TemperatureReading extends ShipmentTransaction {
 transaction ShipmentReceived extends ShipmentTransaction {
 }
 
+transaction PurchaseOrder extends ShipmentTransaction {
+  o Long order
+}
+
 /**
  * A shipment being tracked as an asset on the ledger
  */
@@ -69,6 +73,7 @@ asset Contract identified by contractId {
   --> Manufacturer manufacturer
   --> Shipper shipper
   --> Retailer retailer
+  --> Customer customer
   o DateTime arrivalDateTime
   o Double unitPrice
   o Double minTemperature
@@ -112,6 +117,9 @@ participant Shipper extends Business {
  * An Retailer is a type of participant in the network
  */
 participant Retailer extends Business {
+}
+
+participant Customer extends Business {
 }
 
 /**
