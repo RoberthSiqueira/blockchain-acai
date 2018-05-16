@@ -25,7 +25,7 @@ require('chai').should();
 const bfs_fs = BrowserFS.BFSRequire('fs');
 const NS = 'org.acme.shipping.perishable';
 let farmer_id = 'lucas@email.com';
-let importer_id = 'supermarket@email.com';
+let retailer_id = 'roberth@email.com';
 let factory;
 
 describe('Perishable Shipping Network', () => {
@@ -86,14 +86,14 @@ describe('Perishable Shipping Network', () => {
                     newFarmer.accountBalance.should.equal(2500);
                 })
                 .then(() => {
-                    return businessNetworkConnection.getParticipantRegistry(NS + '.Importer');
+                    return businessNetworkConnection.getParticipantRegistry(NS + '.Retailer');
                 })
-                .then((importerRegistry) => {
-                    // check the importer's balance
-                    return importerRegistry.get(importer_id);
+                .then((retailerRegistry) => {
+                    // check the retailer's balance
+                    return retailerRegistry.get(retailer_id);
                 })
-                .then((newImporter) => {
-                    newImporter.accountBalance.should.equal(-2500);
+                .then((newRetailer) => {
+                    newRetailer.accountBalance.should.equal(-2500);
                 })
                 .then(() => {
                     return businessNetworkConnection.getAssetRegistry(NS + '.Shipment');
@@ -137,14 +137,14 @@ describe('Perishable Shipping Network', () => {
         //             newFarmer.accountBalance.should.equal(2500);
         //         })
         //         .then(() => {
-        //             return businessNetworkConnection.getParticipantRegistry(NS + '.Importer');
+        //             return businessNetworkConnection.getParticipantRegistry(NS + '.Retailer');
         //         })
-        //         .then((importerRegistry) => {
-        //             // check the importer's balance
-        //             return importerRegistry.get(importer_id);
+        //         .then((retailerRegistry) => {
+        //             // check the retailer's balance
+        //             return retailerRegistry.get(retailer_id);
         //         })
-        //         .then((newImporter) => {
-        //             newImporter.accountBalance.should.equal(-2500);
+        //         .then((newRetailer) => {
+        //             newRetailer.accountBalance.should.equal(-2500);
         //         });
         // });
 
@@ -172,14 +172,14 @@ describe('Perishable Shipping Network', () => {
                     newFarmer.accountBalance.should.equal(4000);
                 })
                 .then(() => {
-                    return businessNetworkConnection.getParticipantRegistry(NS + '.Importer');
+                    return businessNetworkConnection.getParticipantRegistry(NS + '.Retailer');
                 })
-                .then((importerRegistry) => {
-                    // check the importer's balance
-                    return importerRegistry.get(importer_id);
+                .then((retailerRegistry) => {
+                    // check the retailer's balance
+                    return retailerRegistry.get(retailer_id);
                 })
-                .then((newImporter) => {
-                    newImporter.accountBalance.should.equal(-4000);
+                .then((newRetailer) => {
+                    newRetailer.accountBalance.should.equal(-4000);
                 });
         });
 
@@ -207,14 +207,14 @@ describe('Perishable Shipping Network', () => {
                     newFarmer.accountBalance.should.equal(5000);
                 })
                 .then(() => {
-                    return businessNetworkConnection.getParticipantRegistry(NS + '.Importer');
+                    return businessNetworkConnection.getParticipantRegistry(NS + '.Retailer');
                 })
-                .then((importerRegistry) => {
-                    // check the importer's balance
-                    return importerRegistry.get(importer_id);
+                .then((retailerRegistry) => {
+                    // check the retailer's balance
+                    return retailerRegistry.get(retailer_id);
                 })
-                .then((newImporter) => {
-                    newImporter.accountBalance.should.equal(-5000);
+                .then((newRetailer) => {
+                    newRetailer.accountBalance.should.equal(-5000);
                 });
         });
     });
