@@ -41,7 +41,7 @@ transaction TemperatureReading extends ShipmentTransaction {
 /**
  * A notification that a shipment has been received by the
  * importer and that funds should be transferred from the importer
- * to the grower to pay for the shipment.
+ * to the farmer to pay for the shipment.
  */
 transaction ShipmentReceived extends ShipmentTransaction {
 }
@@ -59,14 +59,14 @@ asset Shipment identified by shipmentId {
 }
 
 /**
- * Defines a contract between a Grower and an Importer to ship using
+ * Defines a contract between a Farmer and an Importer to ship using
  * a Shipper, paying a set unit price. The unit price is multiplied by
  * a penality factor proportional to the deviation from the min and max
  * negociated temperatures for the shipment.
  */
 asset Contract identified by contractId {
   o String contractId
-  --> Grower grower
+  --> Farmer farmer
   --> Shipper shipper
   --> Importer importer
   o DateTime arrivalDateTime
@@ -97,9 +97,9 @@ abstract participant Business identified by email {
 }
 
 /**
- * A Grower is a type of participant in the network
+ * A Farmer is a type of participant in the network
  */
-participant Grower extends Business {
+participant Farmer extends Business {
 }
 
 /**
