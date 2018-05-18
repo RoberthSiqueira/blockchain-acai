@@ -47,7 +47,7 @@ transaction ShipmentReceived extends ShipmentTransaction {
 }
 
 transaction PurchaseOrder extends ShipmentTransaction {
-  o Long order
+  o Long qtyOrder
 }
 
 /**
